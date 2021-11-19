@@ -1,7 +1,6 @@
 <?php
 
-class Connection
-{
+class Connection{
 
     private $_dbHostname = "127.0.0.1";
     private $_dbName = "cadastro";
@@ -9,8 +8,7 @@ class Connection
     private $_dbPassword = "bcd127";
     private $_conn;
 
-    public function __construct()
-    {
+    public function __construct(){
 
         try {
 
@@ -21,18 +19,14 @@ class Connection
             );
 
             $this->_conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            
         } catch (PDOException $error) {
-            
+
             echo "Connection error: " . $error->getMessage();
-
         }
+    }
 
-        public function returnConnection(){
+    public function returnConnection(){
 
-            return $this->_conn;
-
-        }
-
+        return $this->_conn;
     }
 }
